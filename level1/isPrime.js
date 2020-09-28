@@ -2,8 +2,16 @@
  * Determines whether the given number is a prime number, i.e. it is not divisible by any integers other than 1 and itself.
  * Returns true or false.
  */
-function isPrime() {
+function isPrime(number) {
+  if (number == 1)
+    return false;
+  
+  for (let i = 2; i < Math.sqrt(number); i++) {
+    if (number % i == 0)
+      return false;
+  }
 
+  return true;
 }
 
 describe('isPrime', function() {
